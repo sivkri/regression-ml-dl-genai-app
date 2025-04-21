@@ -27,17 +27,17 @@ Designed as a modular, production-style app, this solution enables users to:
 | **Data Upload** | Accepts CSV data
 ---
 
-## 🧪 Technologies Used
+## Technologies Used
 
-- 🧮 **Scikit-learn**: Linear Regression, Random Forest
-- 🧠 **TensorFlow / Keras**: Deep Learning regression model
-- 🧾 **Pandas & Matplotlib**: Data manipulation and visualization
-- 🌐 **Streamlit**: Interactive web app
-- 🧙 **OpenAI GPT (via API)**: Model explanation using Generative AI
+- **Scikit-learn**: Linear Regression, Random Forest
+- **TensorFlow / Keras**: Deep Learning regression model
+- **Pandas & Matplotlib**: Data manipulation and visualization
+- **Streamlit**: Interactive web app
+- **OpenAI GPT (via API)**: Model explanation using Generative AI
 
 ---
 
-## 💻 Getting Started
+## Getting Started
 
 ### 1. Clone the repository
 
