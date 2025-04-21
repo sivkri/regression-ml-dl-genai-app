@@ -1,4 +1,4 @@
-# regression-ml-dl-genai-app
+# Comprehensive regression-ml-dl-genai-app
 
 An interactive regression analysis platform powered by **Machine Learning**, **Deep Learning**, and **Generative AI** — built with **Streamlit** for real-time, explainable model exploration.
 
