@@ -1,0 +1,6 @@
+pandas
+scikit-learn
+matplotlib
+tensorflow
+streamlit
+openai>=1.0.0
