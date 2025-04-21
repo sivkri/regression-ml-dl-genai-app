@@ -92,4 +92,39 @@ The GenAI assistant uses the OpenAI API (GPT-3.5/4) to generate:
 
   Interpretations of model predictions in natural language
 
+----
+### ⚖️ ML vs DL: Side-by-Side Comparison
+
+| 🔍 Aspect                    | 🧠 ML (XGBoost, RF, Stacking)                 | 🤖 DL (Deep Neural Network)                          |
+|-----------------------------|-----------------------------------------------|------------------------------------------------------|
+| **Model Type**              | Ensemble of Decision Trees (XGBoost, RF) +Linear Stacking                    | Multi-layer feedforward neural network              |
+| **Feature Engineering**     | Manual (RoomsPerPerson, LogPopulation)                    | Same manual features used                           |
+| **Outlier Handling**        | Z-score or IQR-based filtering                | Same method                                          |
+| **Feature Scaling**         | Optional (needed for linear models)           | Required (for better convergence)                   |
+| **Hyperparameter Tuning**  | GridSearch / RandomSearchCV                   | Layer tuning + callbacks                            |
+| **Regularization**          | Tree constraints, early stopping              | L2, Dropout, EarlyStopping                          |
+| **Training Control**        | Cross-validation, early stopping              | EarlyStopping, ReduceLROnPlateau, Checkpoints       |
+| **Explainability**          | ✅ SHAP/LIME available  for feature importance                        | ❌ Harder (need external tools like LIME, tf-explain)|
+| **Training Speed**          | Fast on small/medium datasets                        | Slower due to many epochs                           |
+| **Scalability**             | Easy to scale (tree-based)                       | Great with GPU on large data                        |
+| **Interpretability**        | High (especially with SHAP)                   | Low unless explained manually                       |
+| **Overfitting Risk**        | Moderate (trees handle it better)             | High without proper regularization                  |
+| **Custom Layers/Complexity**             | Less flexible (fixed structure)               | Highly flexible (custom layers, losses, etc.)       |
+
+-----
+
+### When to Use What?
+
+| Use Case                                     | ✅ Choose ML (Tree-based models, etc.) | ✅ Choose DL (Neural Networks)         |
+|---------------------------------------------|----------------------------------------|----------------------------------------|
+| **Structured/tabular data**                 | ✅ Excellent performance                | ⚠️ Works, but often overkill            |
+| **Need explainability**                     | ✅ SHAP, easily interpretable           | ❌ Requires extra tools like LIME/SHAP  |
+| **Small to medium dataset**                 | ✅ Fast and efficient                   | ⚠️ Risk of overfitting, slower training |
+| **Large-scale, complex dataset**            | ⚠️ May not scale well                  | ✅ Scales well with GPU                 |
+| **Unstructured data (images, text, audio)** | ❌ Not suitable                         | ✅ Ideal choice                         |
+| **Quick prototyping**                       | ✅ Minimal tuning needed                | ❌ Needs architecture/hyperparameter tuning |
+| **Limited compute resources**               | ✅ Lightweight models                   | ❌ Needs more memory/time               |
+| **Business-friendly interpretation needed** | ✅ High interpretability                | ❌ Black-box unless explained further   |
+| **Want to ensemble or stack models**        | ✅ Works very well                      | ⚠️ Can be complex to ensemble           |
+
   
